@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginsmall"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin"
+                    android:text="@string/productName"
+                    android:padding="@dimen/padding"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/llTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_marginLeft="@dimen/marginsmall"
+                    android:layout_marginRight="@dimen/marginsmall"
+                    android:layout_marginBottom="@dimen/margin"
+                    android:weightSum="2"
+                    app:layout_constraintTop_toBottomOf="@id/tvProductName">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/price"
+                        android:gravity="center"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/quantity"
+                        android:gravity="center"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/total"
+                        android:gravity="center"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginsmall"
+                    android:layout_marginLeft="@dimen/marginsmall"
+                    android:layout_marginRight="@dimen/marginsmall"
+                    android:layout_marginBottom="@dimen/margin"
+                    android:weightSum="2"
+                    app:layout_constraintTop_toBottomOf="@id/llTitle">
+
+                    <EditText
+                        android:id="@+id/edtProductPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:inputType="numberDecimal" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin"
+                        android:layout_marginBottom="@dimen/margin"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnPlus"
+                            android:layout_width="@dimen/addbuttonwidthonDialog"
+                            android:layout_height="45dp"
+                            android:text="@string/plus"
+                            android:textSize="@dimen/titleTextSize"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:background="@drawable/bg_button"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/edtProductQuantity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/marginsmall"
+                            android:layout_marginRight="@dimen/marginsmall"
+                            android:gravity="center"
+                            android:inputType="number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@id/btnPlus"
+                            app:layout_constraintRight_toLeftOf="@id/btnMinus"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/btnMinus"
+                            android:layout_width="@dimen/addbuttonwidthonDialog"
+                            android:layout_height="45dp"
+                            android:text="@string/minus"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/titleTextSize"
+                            android:textColor="@color/white"
+                            android:background="@drawable/bg_button"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <EditText
+                        android:id="@+id/edtProductPriceTotal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin"
+                        android:layout_marginLeft="@dimen/marginsmall"
+                        android:layout_marginRight="@dimen/marginsmall"
+                        android:layout_marginBottom="@dimen/margin"
+                        android:layout_weight="0.5"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
